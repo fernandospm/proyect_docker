@@ -1,15 +1,11 @@
 # Descargar la imagen de ubuntu
 FROM ubuntu:22.04
 
-
 # Actualizar la lista de actualizaciones
-RUN apt-get update
+RUN apt-get update --fix-missing
 
 # Actulaizar la imagen
 RUN apt-get upgrade -y
-
-# Actulaizar la imagen
-RUN apt-get install python3 -y
 
 #Copiar la carpeta a webapp
 COPY ./webapp /home/webapp
@@ -18,7 +14,7 @@ COPY ./webapp /home/webapp
 WORKDIR /home/webapp
 
 #Instalar pip
-Run apt-get install python3-pip -y
+RUN apt-get install python3-pip -y
 
 #Instalar las librerias
 RUN pip install -r requirements.txt
@@ -28,6 +24,3 @@ EXPOSE 8080
 
 #Ejecutar la aplicacion web
 CMD [ "python3", "app.py" ]
-
-
-#docker run -p 8080:8080 fernandosp:v1
