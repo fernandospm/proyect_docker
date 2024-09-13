@@ -8,7 +8,7 @@ urls = (
 # Clase para manejar la ruta "/"
 class Index:
     def GET(self):
-        return "Hola putitas!"
+        return "Holaaaaa!"
 
 # Inicializar la aplicación
 if __name__ == "__main__":

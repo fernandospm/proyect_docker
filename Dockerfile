@@ -9,25 +9,25 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 # Actulaizar la imagen
-#RUN apt-get install python3 -y
+RUN apt-get install python3 -y
 
 #Copiar la carpeta a webapp
-#COPY ./webapp /home/webapp
+COPY ./webapp /home/webapp
 
 #Establecer el directorio de trabaji
-#WORKDIR /home/webapp
+WORKDIR /home/webapp
 
 #Instalar pip
-#Run apt-get install python3-pip -y
+Run apt-get install python3-pip -y
 
 #Instalar las librerias
-#RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 #Abrir puerto 8080
-#EXPOSE 8080
+EXPOSE 8080
 
 #Ejecutar la aplicacion web
-#CMD [ "python3", "app.py" ]
+CMD [ "python3", "app.py" ]
 
 
 #docker run -p 8080:8080 fernandosp:v1
